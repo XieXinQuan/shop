@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.quan</groupId>
+    <artifactId>shop</artifactId>
+    <version>1.0</version>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!--        spring data jpa-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.44</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+        </dependency>
+        <!-- redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!--validation校验-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!--devtools热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+            <scope>true</scope>
+        </dependency>
+    </dependencies>
+    <!--    <build>-->
+    <!--        <plugins>-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.springframework.boot</groupId>-->
+    <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+    <!--                <configuration>-->
+    <!--                    <mainClass>com.quan.Application8001</mainClass>-->
+    <!--                </configuration>-->
+    <!--                <executions>-->
+    <!--                    <execution>-->
+    <!--                        <goals>-->
+    <!--                            <goal>repackage</goal>-->
+    <!--                        </goals>-->
+    <!--                    </execution>-->
+    <!--                </executions>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--        <resources>-->
+    <!--            &lt;!&ndash; 把 src/main/lib 目录下引用本地 jar 打包到 BOOT-INF/lib/ 目录下（maven依赖的jar也会自动打进该目录） &ndash;&gt;-->
+    <!--            <resource>-->
+    <!--                &lt;!&ndash; 需要在项目中新建 src/main/lib 目录并把项目用到的本地 jar 包放入其中 &ndash;&gt;-->
+    <!--                <directory>${project.basedir}/src/main/lib</directory>-->
+    <!--                <targetPath>BOOT-INF/lib/</targetPath>-->
+    <!--                <includes>-->
+    <!--                    <include>**/*.jar</include>-->
+    <!--                </includes>-->
+    <!--            </resource>-->
+    <!--            &lt;!&ndash; 把 resources 下的资源文件打包到 BOOT-INF/classes/&ndash;&gt;-->
+    <!--            <resource>-->
+    <!--                <directory>src/main/resources</directory>-->
+    <!--                <targetPath>BOOT-INF/classes/</targetPath>-->
+    <!--            </resource>-->
+    <!--        </resources>-->
+    <!--    </build>-->
+</project>
