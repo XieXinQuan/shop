@@ -1,14 +1,21 @@
 server:
   port: 80
+  tomcat:
+    uri-encoding: UTF-8
+
 spring:
   application:
     name: shop
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/springcloud?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=UTC&serverTimezone=GMT%2b8
+    url: jdbc:mysql://127.0.0.1:3306/shop?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=UTC&serverTimezone=GMT%2b8
     username: root
-    password: 137286
   devtools:
     restart:
       enabled: true
@@ -33,3 +40,12 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 100MB
+  mail:
+    host: smtp.163.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
