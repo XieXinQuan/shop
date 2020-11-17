@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.quan.Enum.CommodityCategoryEnum;
 import com.quan.Enum.ResultEnum;
 import com.quan.annotation.EnumValue;
+import com.quan.annotation.NeedLogin;
 import com.quan.annotation.SimpleValue;
 import com.quan.entity.Commodity;
 import com.quan.exception.GlobalException;
@@ -36,6 +37,7 @@ public class CommodityController {
     CommodityService commodityService;
 
 
+    @NeedLogin
     @PostMapping("/addCommodity")
     public String addCommodity(@RequestParam(value = "id", required = false) Long id,
                                @RequestParam("title") @Size(min = 1, max = 20, message = "商品标题的长度在1~20之间.") String title,
@@ -53,31 +55,6 @@ public class CommodityController {
     @GetMapping("/loadCommodityList")
     public Object loadCommodityList(){
         return commodityService.loadIndexCommodityContainsCategory();
-    }
-
-
-    @GetMapping("/category")
-    public String category(){
-        log.info("All User Can Enter");
-        return "All User Can Enter";
-    }
-
-    @GetMapping("/vipCategory")
-    public String vipCategory(){
-        log.info("Vip Can Enter");
-        return "Vip Can Enter";
-    }
-
-    @GetMapping("/superVipCategory")
-    public String superVipCategory(){
-        log.info("Super Vip Can Enter");
-        return "Super Vip Can Enter";
-    }
-
-    @GetMapping("/test")
-    public String index(){
-        log.info("All User Can Enter");
-        return "All User Can Enter";
     }
 
     @GetMapping("/categoryList")
@@ -140,9 +117,9 @@ public class CommodityController {
         return commodityService.indexCommodityList();
     }
 
+    @NeedLogin
     @PostMapping("/applyCreateCommodityId")
     public Object applyCreateCommodityId(){
-
         return commodityService.applyCreateCommodity();
     }
 
@@ -163,11 +140,4 @@ public class CommodityController {
         JSONObject commodityDetails = commodityService.getCommodityDetails(id);
         return commodityDetails;
     }
-
-
-
-
-
-
-
 }

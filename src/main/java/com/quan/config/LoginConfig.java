@@ -22,11 +22,6 @@ public class LoginConfig implements WebMvcConfigurer {
         registration.addPathPatterns("/**");
         //放行
         registration.excludePathPatterns(
-                "/user/login",
-                "/user/code",
-                "/user/register",
-                "/commodity/**",
-
                 "/files/**",
                 "/**/*.html",
                 "/**/*.js",

@@ -1,6 +1,7 @@
 package com.quan.controller;
 
 import com.quan.Enum.ResultEnum;
+import com.quan.annotation.NeedLogin;
 import com.quan.exception.GlobalException;
 import com.quan.service.FileService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,7 @@ public class FileController {
     @Resource
     FileService fileService;
 
+    @NeedLogin
     @PostMapping("/image")
     public String image(MultipartFile file, @RequestParam("commodityId") Long commodityId) throws IOException {
         if (file == null || file.isEmpty()) {

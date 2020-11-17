@@ -1,5 +1,6 @@
 package com.quan.controller;
 
+import com.quan.annotation.NeedLogin;
 import com.quan.service.UserService;
 import com.quan.util.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +24,7 @@ public class UserController {
 
     @Resource
     UserService userService;
+
     @PostMapping("/login")
     public Object login(@RequestParam("username") @Size(max = 5, min = 1, message = "用户名长度在1~5位") String username,
                         @RequestParam("password") @Size(max = 18, min = 6, message = "密码的长度为6~18位") String password){
@@ -42,15 +44,17 @@ public class UserController {
 
     @PostMapping("/code")
     public Object code(@RequestParam("email") @Email String email) {
-        int code = userService.code(email);
+        userService.code(email);
         return "发送成功";
     }
 
-    @PostMapping("/info")
+    @NeedLogin
+    @GetMapping("/info")
     public Object info(){
         return userService.userInfo();
     }
 
+    @NeedLogin
     @GetMapping("/applyMerchant")
     public Object applyMerchant(){
         userService.registerMerchant();

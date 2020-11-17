@@ -1,5 +1,6 @@
 package com.quan.controller;
 
+import com.quan.annotation.NeedLogin;
 import com.quan.service.OrderService;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/order")
+@NeedLogin
 public class OrderController {
     @Resource
     OrderService orderService;

@@ -16,6 +16,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/shop?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=UTC&serverTimezone=GMT%2b8
     username: root
+    password: 123456
   devtools:
     restart:
       enabled: true
@@ -42,6 +43,8 @@ spring:
       max-request-size: 100MB
   mail:
     host: smtp.163.com
+    username: 22@163.com
+    password: 1111
     properties:
       mail:
         smtp:
